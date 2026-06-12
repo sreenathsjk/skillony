@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with onboarding inputs, progress metrics, and daily drills",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique user ID from Firebase Auth" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "hasCompletedOnboarding": { "type": "boolean", "description": "Whether the user successfully resolved onboarding" },
+        "onboarding": { "type": "object", "description": "User onboarding fields" },
+        "daysTilInterview": { "type": "integer", "description": "Days remaining until selected interview goal date" },
+        "dailyMissions": { "type": "array", "description": "Daily readiness drills" },
+        "activeStreak": { "type": "integer", "description": "Active daily drill streak tracking" },
+        "premiumTier": { "type": "string", "description": "Active subscripton level (free, premium, pro)" },
+        "speakingCount": { "type": "integer", "description": "Total completed speaking drills" },
+        "interviewCount": { "type": "integer", "description": "Total mock interviews evaluated" },
+        "missionConfidenceScores": { "type": "object", "description": "Map of completed mission confidence scores" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile database paths"
+    }
+  }
+}

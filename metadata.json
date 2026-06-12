@@ -1,0 +1,6 @@
+{
+  "name": "Skillony",
+  "description": "Skillony is an AI-powered English communication and career growth platform built for high-stakes job market success.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
