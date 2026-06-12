@@ -4,8 +4,9 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const isGithub = process.env.GITHUB_ACTIONS === 'true' || !!process.env.GITHUB_REPOSITORY;
   return {
-    base: './',
+    base: isGithub ? '/skillony/' : './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
